@@ -64,6 +64,8 @@
 		85B6F05421204BCD00083C4A /* DetailTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6F05321204BCD00083C4A /* DetailTitleCell.m */; };
 		85B6F05721204BDC00083C4A /* DetailAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6F05621204BDC00083C4A /* DetailAddressCell.m */; };
 		85B6F05B21204BF200083C4A /* DetailImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6F05A21204BF200083C4A /* DetailImagesCell.m */; };
+		85FCEA6F215AA130008B5943 /* DetailRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCEA6E215AA130008B5943 /* DetailRatingCell.m */; };
+		85FCEA72215AAF8C008B5943 /* CustomerReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCEA71215AAF8C008B5943 /* CustomerReviewTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +165,10 @@
 		85B6F05621204BDC00083C4A /* DetailAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailAddressCell.m; sourceTree = "<group>"; };
 		85B6F05921204BF200083C4A /* DetailImagesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailImagesCell.h; sourceTree = "<group>"; };
 		85B6F05A21204BF200083C4A /* DetailImagesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailImagesCell.m; sourceTree = "<group>"; };
+		85FCEA6D215AA130008B5943 /* DetailRatingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailRatingCell.h; sourceTree = "<group>"; };
+		85FCEA6E215AA130008B5943 /* DetailRatingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailRatingCell.m; sourceTree = "<group>"; };
+		85FCEA70215AAF8C008B5943 /* CustomerReviewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerReviewTableViewCell.h; sourceTree = "<group>"; };
+		85FCEA71215AAF8C008B5943 /* CustomerReviewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerReviewTableViewCell.m; sourceTree = "<group>"; };
 		BC4242C85E02B49E5BA42615 /* Pods-dealzNMealz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealzNMealz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dealzNMealz/Pods-dealzNMealz.debug.xcconfig"; sourceTree = "<group>"; };
 		BCAC8AA25BF13E218C22BFDA /* libPods-dealzNMealz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dealzNMealz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D079352EB2F0B7F449FC4935 /* Pods-dealzNMealz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealzNMealz.release.xcconfig"; path = "Pods/Target Support Files/Pods-dealzNMealz/Pods-dealzNMealz.release.xcconfig"; sourceTree = "<group>"; };
@@ -528,6 +534,10 @@
 				85B6F05621204BDC00083C4A /* DetailAddressCell.m */,
 				85B6F05921204BF200083C4A /* DetailImagesCell.h */,
 				85B6F05A21204BF200083C4A /* DetailImagesCell.m */,
+				85FCEA6D215AA130008B5943 /* DetailRatingCell.h */,
+				85FCEA6E215AA130008B5943 /* DetailRatingCell.m */,
+				85FCEA70215AAF8C008B5943 /* CustomerReviewTableViewCell.h */,
+				85FCEA71215AAF8C008B5943 /* CustomerReviewTableViewCell.m */,
 			);
 			name = NewDetailsCells;
 			sourceTree = "<group>";
@@ -717,8 +727,10 @@
 				5FEB12B01F59A04D0077CFBB /* main.m in Sources */,
 				85B6F050212043EF00083C4A /* DetailVC.m in Sources */,
 				85A43A3A2125E188009ABE5C /* Utils.m in Sources */,
+				85FCEA72215AAF8C008B5943 /* CustomerReviewTableViewCell.m in Sources */,
 				5FEB12F31F5AB2120077CFBB /* HomeCollectionViewCell.m in Sources */,
 				857E72EF21594C1D003327AC /* HomeFIlterModel.m in Sources */,
+				85FCEA6F215AA130008B5943 /* DetailRatingCell.m in Sources */,
 				5FEB12FF1F5ABDB90077CFBB /* SigUpViewController.m in Sources */,
 				857E72F6215952F5003327AC /* LeveyPopListViewCell.m in Sources */,
 				5FB62F2C1F60682C00F3DDBC /* DetailsImagesTableViewCell.m in Sources */,

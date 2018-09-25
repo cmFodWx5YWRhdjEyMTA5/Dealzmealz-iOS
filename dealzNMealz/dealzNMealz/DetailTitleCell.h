@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *restoMorningTimesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *restoEveTimingsLbl;
 @property (weak, nonatomic) IBOutlet UILabel *restoRatingsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *discountPercentLbl;
+@property (weak, nonatomic) IBOutlet UILabel *discountMinAmountLbl;
 
 @end

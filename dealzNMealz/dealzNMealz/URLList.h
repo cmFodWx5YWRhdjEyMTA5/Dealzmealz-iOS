@@ -43,7 +43,7 @@
 #define DISC_RESTO_DETAIL_URL BASE_URL@"offrestdisc="
 
 #define BOOK_TBL_URL BASE_URL@"bookatable="
-
+#define ADD_REVIEW_URL BASE_URL@"addreview=1&txtreview="
 
 #define REVIEWED_RESTO_DETAIL_URL BASE_URL@"reviewed="
 #define LATEST_RESTO_DETAIL_URL BASE_URL@"searched="
