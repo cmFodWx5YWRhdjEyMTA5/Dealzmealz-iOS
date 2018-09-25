@@ -7,7 +7,7 @@
 //
 
 #import "SplashViewController.h"
-
+#import "SWRevealViewController.h"
 @interface SplashViewController ()
 
 @end
@@ -16,18 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    BOOL isLoggedID = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLoggedIn"];
-    if (isLoggedID == YES) {
-       // [self performSelector:@selector(moveToLogin) withObject:nil afterDelay:3];
-        NSLog(@" move to home screen");
-    } else {
-        [self performSelector:@selector(moveToLogin) withObject:nil afterDelay:3];
-    }
+    [self performSelector:@selector(moveToLogin) withObject:nil afterDelay:3];
+   
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)moveToLogin {
-    [self performSegueWithIdentifier:@"splashToLogin" sender:nil];
+    BOOL isLoggedID = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLoggedIn"];
+    if (isLoggedID == YES) {
+        //revealNavID
+        SWRevealViewController *swreveal = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+        [self.navigationController initWithRootViewController:swreveal];
+    } else {
+         [self performSegueWithIdentifier:@"splashToLogin" sender:nil];
+    }
+   
+   // [self performSegueWithIdentifier:@"splashToLogin" sender:nil];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

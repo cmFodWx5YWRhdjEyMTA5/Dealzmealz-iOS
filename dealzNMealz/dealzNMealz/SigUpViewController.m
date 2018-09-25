@@ -114,9 +114,10 @@
 
 - (void)signUpCall {
    
-    //https://dealznmealz.com/mobileapi.php?signup=1&name=xxx&mob=1123456740&email=aa@gmail.com&birth=dd/mm/yyyy&username=xxxx&password=123489
+    NSString *userName = _userNameTF.text;
+    userName = [userName stringByReplacingOccurrencesOfString:@" " withString:@""];
 
-    NSString *str = [NSString stringWithFormat:@"%@%@&mob=%@&email=%@&birth=%@&username=%@&password=%@",SIGNUP_OTP_RECEIVE_URL,_userNameTF.text,_mobileNumTf.text,_emailTF.text,_dobTF.text,_userNameTF.text,_passwordTF.text];
+    NSString *str = [NSString stringWithFormat:@"%@%@&mob=%@&email=%@&birth=%@&username=%@&password=%@",SIGNUP_OTP_RECEIVE_URL,userName,_mobileNumTf.text,_emailTF.text,_dobTF.text,userName,_passwordTF.text];
     
     
     [[NetworkManager sharedInstance]getDataFromServerURL:str withCompletionHandler:^(NSError *error, id response, NSHTTPURLResponse *urlResponse) {
@@ -125,15 +126,10 @@
             if ([urlResponse statusCode]  == 200) {
                  NSLog(@"response is %@",response);
                 NSDictionary *responseDict =(NSDictionary *)response;
-                if([[responseDict allKeys]containsObject:@"otp"]) {
-                    receivedOtpString = [responseDict valueForKey:@"otp"];
-                    eToken = [responseDict valueForKey:@"etoken"];
-                    _mobileNumLbl.text = [NSString stringWithFormat:@"%@",_mobileNumTf.text];
+                if([[responseDict allKeys]containsObject:@"user_id"]) {
+                    NSString *userID = [responseDict valueForKey:@"user_id"];
                     [self.navigationController popViewControllerAnimated:NO];
-
-                    /*[UIView animateWithDuration:5 animations:^{
-                        _otpViewTop.constant = -20;
-                    }];*/
+                    [self showAlertWithError:@"Successfully created account please login to continue"];
                 } else if([[responseDict allKeys]containsObject:@"message"]) {
                     [self showAlertWithError:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"message"]]];
                 }

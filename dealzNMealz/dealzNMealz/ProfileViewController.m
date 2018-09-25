@@ -43,9 +43,9 @@
     if (indexPath.section == 0) {
     //userInfoID
         UserProfileDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userInfoID"];
-        cell.userNameLabel.text = @"HELLO WORLD";
-        cell.userPhoneNumberLabel.text = @"8987463561";
-        cell.userEmailLabel.text = @"helloWorld@gmail.com";
+        cell.userNameLabel.text = [[NSUserDefaults standardUserDefaults]valueForKey:@"username"];
+        cell.userPhoneNumberLabel.text = [[NSUserDefaults standardUserDefaults]valueForKey:@"mobileno"];
+        cell.userEmailLabel.text = [[NSUserDefaults standardUserDefaults]valueForKey:@"email"];
         [cell.editButon addTarget:self action:@selector(editProfileClick) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -107,11 +107,11 @@
 
 - (IBAction)logOutButtonClick:(UIButton *)sender {
     
-    for (UIViewController *vc in self.navigationController.viewControllers) {
+   /* for (UIViewController *vc in self.navigationController.viewControllers) {
         
         if ([vc isKindOfClass:[LoginViewController class]]) {
             [self.navigationController popToViewController:vc animated:YES];
         }
-    }
+    }*/
 }
 @end

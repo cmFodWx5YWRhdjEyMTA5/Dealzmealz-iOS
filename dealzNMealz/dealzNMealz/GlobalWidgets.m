@@ -39,6 +39,7 @@
 +(void)showAlertWithMessage:(NSString *)message {
     UIAlertController *alert = [GlobalWidgets showAlertWithTitle:message yesButtonTitle:@"OK" noButtonTitle:nil];
     UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    [window makeKeyAndVisible];
     [window.rootViewController presentViewController:alert animated:true completion:nil];
     //[window presentViewController:alert animated:YES completion:nil];
 }

@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "Header.h"
 #import "ForgetViewController.h"
+#import "SWRevealViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -86,21 +87,27 @@
         // [self getBannerDetailsFromServer];
         if (error == nil) {
             if ([urlResponse statusCode]  == 200) {
-                
                 NSDictionary *responseDict = (NSDictionary *)response;
                 
+               
                 if ([[responseDict allKeys]containsObject:@"user_id"]) {
-                     [self performSegueWithIdentifier:@"loginToHome" sender:nil];
+                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"user_id"]] forKey:@"user_id"];
+                     [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"email"]] forKey:@"email"];
+                     [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"mobileno"]] forKey:@"mobileno"];
+                     [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"username"]] forKey:@"username"];
+                     [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"password"]] forKey:@"password"];
+                     [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%@",[responseDict valueForKey:@"id"]] forKey:@"id"];
+                    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isLoggedIn"];
+                    // [self performSegueWithIdentifier:@"loginToHome" sender:nil];
+                    SWRevealViewController *swreveal = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+                    [self.navigationController initWithRootViewController:swreveal];
                 } else {
                     [self showAlertWithError:@"Invalid Credentials"];
                 }
-                
-              
                 _userNameTextField.text = @"";
                 _passwordTextField.text = @"";
                 
             } else {
-                
                 [self showAlertWithError:@"Login Failed .."];
             }
             

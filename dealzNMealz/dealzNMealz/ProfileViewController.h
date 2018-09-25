@@ -10,5 +10,4 @@
 
 @interface ProfileViewController : BaseViewController
 - (IBAction)logOutButtonClick:(UIButton *)sender;
-
 @end

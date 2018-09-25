@@ -248,7 +248,7 @@
 }
 
 - (void)bookTblBtnClick:(UIButton *)sender {
-    NSString *bookTblApi = [NSString stringWithFormat:@"%@1&uid=%@&rid=%@",BOOK_TBL_URL,@"31",_resto_ID];
+    NSString *bookTblApi = [NSString stringWithFormat:@"%@1&uid=%@&rid=%@",BOOK_TBL_URL,[[NSUserDefaults standardUserDefaults]valueForKey:@"id"],_resto_ID];
     [self callBookTblAPI:bookTblApi];
     
 }
@@ -315,7 +315,7 @@
 }
 
 - (void)addReviewApiCall {
-    NSString *ratingUrl = [NSString stringWithFormat:@"%@%@&rating=%d&restid=%@&userid=%@",ADD_REVIEW_URL,_reviewTextView.text,3,_resto_ID,@"147"];
+    NSString *ratingUrl = [NSString stringWithFormat:@"%@%@&rating=%d&restid=%@&userid=%@",ADD_REVIEW_URL,_reviewTextView.text,3,_resto_ID,[[NSUserDefaults standardUserDefaults]valueForKey:@"id"]];
     [[NetworkManager sharedInstance]getDataFromServerURL:ratingUrl withCompletionHandler:^(NSError *error, id response, NSHTTPURLResponse *urlResponse) {
         _reviewTextView.text = @"";
         [_reviewView removeFromSuperview];

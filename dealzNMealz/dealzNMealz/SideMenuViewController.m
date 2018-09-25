@@ -38,7 +38,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"simple"];
     }
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[menuItemsArray objectAtIndex:indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }
@@ -54,12 +56,12 @@
         [self performSegueWithIdentifier:@"sideMenuToProfile" sender:nil];
     } else  if (indexPath.row == 2)  {
 
-        for (UIViewController *vc in self.navigationController.viewControllers) {
+      /*  for (UIViewController *vc in self.navigationController.viewControllers) {
             
             if ([vc isKindOfClass:[LoginViewController class]]) {
                 [self.navigationController popToViewController:vc animated:YES];
             }
-        }
+        }*/
         
     }
     
