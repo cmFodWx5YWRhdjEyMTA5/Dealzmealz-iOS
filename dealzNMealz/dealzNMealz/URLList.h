@@ -55,5 +55,9 @@
 #define FILTER_CAT_LOC_COS_URL BASE_URL@"filterdata=1&category="
 
 
+#define GOOGLEAPIKEY @"AIzaSyDztlrk_3CnzGHo7CFvLFqE_2bUKEq1JEU"
+
+
+
 //https://dealznmealz.com/mobileapi.php?filterdata=1&category=cat&location=loc&cost=cost
 #endif /* URLList_h */
